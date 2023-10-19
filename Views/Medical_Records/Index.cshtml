@@ -1,0 +1,138 @@
+﻿@model IEnumerable<Primary_HealthCare_System.Models.Medical_Record>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="bg-primary ">
+    <h1 class="m-1 text-center text-white">List of Medical Records</h1>
+</div>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-striped">
+    <thead class="table-priamry">
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CounselorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IssuesDiscussed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeworkAssigned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Progress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FollowUpPlans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NextSessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientID)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalCondition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diagnosis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatmentPlan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medications)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LabResults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Procedures)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FollowUpInstructions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thea>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+        
+            <td>
+                @Html.DisplayFor(modelItem => item.CounselorID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SessionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SessionNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IssuesDiscussed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeworkAssigned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Progress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FollowUpPlans)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NextSessionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientID)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalCondition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diagnosis)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TreatmentPlan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LabResults)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Procedures)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FollowUpInstructions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RecordID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RecordID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RecordID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

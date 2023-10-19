@@ -1,0 +1,118 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@using Primary_HealthCare_System.Controllers
+
+@{
+    ViewData["Title"] = "Chronic Medication";
+}
+@{
+    Layout = "~/Views/Shared/_ChronicLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your meta tags, title, and stylesheet links here -->
+    <!-- Add any additional CSS styles specific to this page -->
+    <style>
+        /* Customize styles as needed */
+        .hero-section {
+            background-color: #f7f7f7;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            background-color: #03A9F4;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+            .cta-button:hover {
+                background-color: #0288D1;
+            }
+
+
+        /* Add any additional styles for content sections */
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <!-- Your navigation bar code here -->
+    </div>
+
+    <div id="content" class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">Welcome to Chronic Medication</h1>
+            <p class="hero-subtitle">Empowering you to manage your chronic health conditions effectively.</p>
+            <a href="@Url.Action("Index", "PatientEducations")" class="cta-button">Learn More</a>
+        </section>
+
+        <section id="learn-more" class="content-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Why Choose Us?</h2>
+                    <p>
+                        At Chronic Medication, we are dedicated to providing you with the tools and support you need to take control of your chronic health conditions. Our mission is to empower you on your health journey, helping you achieve a better quality of life through effective medication management and personalized care.
+                    </p>
+                    <p>
+                        With years of experience in healthcare and technology, our team understands the challenges you face in managing your medications and staying on track with your treatment plan. Our user-friendly platform offers a range of services designed to simplify the process, from requesting medication refills to checking your medical history and setting medication reminders.
+                    </p>
+                    <p>
+                        We believe that informed patients make healthier choices, and that's why we're committed to providing you with educational resources and tools to enhance your understanding of your condition and treatment options. Your well-being is our top priority, and we're here to support you every step of the way.
+                    </p>
+                    <p>
+                        Join our community of individuals who are taking charge of their health. Let us be your partner in managing your chronic conditions, so you can live your life to the fullest.
+                    </p>
+                    <a href="#" class="cta-button">Get Started</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://lh3.googleusercontent.com/etCD1vIr5mSIR7x2FWiEeQRGXX1Y-OEjeBAvWYLWCpc3r9P9k61FL9FWdi4-TO0yqRuOCgIVqkdDdp_Fo_v4TLd7lqZOaEBThw=s1200" alt=""
+                         class="img-fluid" style="max-width: 100%;">
+                    <h3>Adhering to your prescribed medication regimen is your daily commitment to nurturing your well-being and managing your health journey.</h3>
+                </div>
+                <div class="col-md-4">
+                    <div style="right:20px;">
+                    <img src="https://images.news9live.com/h-upload/2022/09/21/560662-med.jpg?w=1200&enlarge=true"
+                         class="img-fluid" style="max-width: 100%;">
+                         </div>
+                    <h3>Adhering to your prescribed medication regimen isn't just a routine – it's your compass to a healthier future, ensuring that each dose paves the way for better well-being and improved quality of life.</h3>
+                </div>
+                <div class="col-md-5">
+                    <div style="margin-top: 10px;">
+                        <img src="https://www.aidsmap.com/sites/default/files/styles/aidsmap_medium_crop/public/2019-07/HIV-testing_0.png?itok=qRMHPOX6"
+                             class="img-fluid" style="max-width: 100%;">
+                    </div>
+                    <h3>Living with HIV is a journey marked by resilience, courage, and unwavering determination. Each day, we face the challenges head-on, proving that our strength is greater than any diagnosis. Together, we break down barriers, shatter stigma, and embrace life with a tenacity that inspires others to see the boundless possibilities that lie ahead</h3>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Add more content sections as needed -->
+
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <!-- Your footer content here -->
+    </footer>
+
+    <!-- Your script references and inline scripts here -->
+</body>
+</html>

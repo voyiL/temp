@@ -1,0 +1,56 @@
+﻿@model Primary_HealthCare_System.Models.Referal
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="bg-primary ">
+    <h1 class="m-1 text-center text-white">Create a Referal</h1>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CounselingSessionDate" class="control-label"></label>
+                <input asp-for="CounselingSessionDate" class="form-control" />
+                <span asp-validation-for="CounselingSessionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientID" class="control-label"></label>
+                <input asp-for="PatientID" class="form-control" />
+                <span asp-validation-for="PatientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferralDate" class="control-label"></label>
+                <input asp-for="ReferralDate" class="form-control" />
+                <span asp-validation-for="ReferralDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferringDoctorID" class="control-label"></label>
+                <input asp-for="ReferringDoctorID" class="form-control" />
+                <span asp-validation-for="ReferringDoctorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferralReason" class="control-label"></label>
+                <input asp-for="ReferralReason" class="form-control" />
+                <span asp-validation-for="ReferralReason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalNotes" class="control-label"></label>
+                <input asp-for="AdditionalNotes" class="form-control" />
+                <span asp-validation-for="AdditionalNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

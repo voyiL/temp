@@ -1,0 +1,111 @@
+﻿@using Primary_HealthCare_System.Models
+
+@{
+    ViewData["Title"] = "Counselling";
+    Layout = "~/Views/Shared/_Conselling.cshtml";
+}
+
+<div class="bg-primary ">
+    <h1 class="m-1 text-center text-white">List of my Appointment for Counselling</h1>
+</div>
+
+<button type="button" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    New Appointment
+</button>
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center" id="exampleModalLabel">Add new Counselling Appointment</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <partial name="/Views/Appointments/Counselling_Appointment.cshtml" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+@if (TempData["Success"] != null)
+{
+    <div class="bg-success text-center text-white p-1 round">
+        <h3>@TempData["Success"]</h3>
+    </div>
+}
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                Appointment Date
+            </th>
+            <th>
+                Appointment Time
+            </th>
+            <th>
+                Purpose
+            </th>
+            <th>
+                clinician
+            </th>
+            <th>
+                Status
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Appointments item in ViewBag.Appointment)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Purpose)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.clinician)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+
+                    <button type="button" class="btn btn-primary mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal-@item.AppointmentId">
+                        Delete Appointment
+                    </button>
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal-@item.AppointmentId" tabindex="-1" aria-labelledby="exampleModalLabel-@item.AppointmentId" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center" id="exampleModalLabel-@item.AppointmentId">Delete Counselling Appointment Confirmation</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h4>Are you sure you want to delete this appointment</h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="btn btn-danger" asp-action="Delete_Conselling_Appointment" asp-route-id="@item.AppointmentId">Delete Appointment</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,36 @@
+﻿@model Primary_HealthCare_System.Models.Appointments
+
+<div class="row">
+   
+        <form asp-action="Counselling_Appointment" asp-controller="Appointments">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="form-group col-6">
+                <label asp-for="AppointmentDate" class="control-label"></label>
+                <input asp-for="AppointmentDate" class="form-control" />
+                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group col-6">
+                <label asp-for="AppointmentTime" class="control-label"></label>
+                <input asp-for="AppointmentTime" class="form-control" />
+                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="clinician" class="control-label">Counsellor</label>
+            <select asp-for="clinician" class="form-control">
+
+                <option value="Dr Mullar">Dr Mullar</option>
+                <option value="Mr Damiels">Mr Damiels</option>
+                <option value="Mrs Danny">Mrs Danny</option>
+            </select>
+            <span asp-validation-for="clinician" class="text-danger mt-2"></span>
+        </div>
+
+        <div class="form-group">
+                <input type="submit" value="Add New Appoiment" class="btn btn-primary m-2" />
+            </div>
+        </form>
+
+</div>
+

@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+  Layout = "~/Views/Shared/_Landing.cshtml";
+}
+<style>
+    #dash-con, #AssessmentTable {
+        background: rgba( 0, 93, 255, 0.35 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 2.5px );
+        -webkit-backdrop-filter: blur( 2.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
+        #dash-con:hover {
+            background: rgba( 0, 93, 255, 0.65 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 12px );
+            -webkit-backdrop-filter: blur( 12px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+</style>
+
+<!-- Modal -->
+@if(TempData["Welcome"] != null)
+{
+    <div id="myModal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+
+                    <button type="button" id="close" class="close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="container text-center">
+                    <img src="~/image/welcome.jpg" style="width:250px" class="mb-5" />
+                    <h2 class=" text-center">@TempData["Welcome"]</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+<h1>Welcome to <span class="text-danger">E</span><span class="text-primary">Nompilo</span></h1>
+@if (User.IsInRole("Patient"))
+{
+   <div class="container-fluid pt-4 px-4">
+
+    <div class="row g-4">
+                <div class=" col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a asp-action="Patient" asp-controller="Counselling">
+                    <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                        <img src="~/Image/Couselling.png" style="width: 65px" />
+                        <div class="ms-3">
+                            <h4 class="mb-2">Couselling<span class="badge bg-primary rounded-pill text-white"></span></h4>
+
+                        </div>
+                    </div>
+                </a>
+                </div>
+    
+
+      
+     
+        <div class="col-sm-6 col-xl-3">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/Vac.png" style="width: 65px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Vaccination</h4>
+
+                </div>
+            </div>
+        </div>
+        
+      
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class=" dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/FM.png" style="width: 50px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Family Planning</h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/Wk.png" style="width: 50px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Walk in</h4>
+
+                </div>
+            </div>
+        </div>
+            <div class="col-sm-6 col-xl-3">
+                <a asp-controller="ChronicHome" asp-action="Index">
+                    <!-- Link to the chronic medication page -->
+                    <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                        <img src="~/Image/Wk.png" style="width: 50px" />
+                        <div class="ms-3">
+                            <h4 class="mb-2">Chronic Medication</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    </div>
+    </div>
+}
+else if (User.IsInRole("Nurse") || User.IsInRole("Doctor"))
+{
+    <div class="container-fluid pt-4 px-4">
+
+        <div class="row g-4">
+            <div class=" col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a asp-action="Counselling" asp-controller="Counselling">
+                    <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                        <img src="~/Image/Couselling.png" style="width: 65px" />
+                        <div class="ms-3">
+                            <h4 class="mb-2">Couselling<span class="badge bg-primary rounded-pill text-white"></span></h4>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+
+
+            <div class="col-sm-6 col-xl-3">
+                <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                    <img src="~/Image/Vac.png" style="width: 65px" />
+                    <div class="ms-3">
+                        <h4 class="mb-2">Vaccination</h4>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                <div id="dash-con" class=" dash-con rounded d-flex align-items-center justify-content-between p-4">
+                    <img src="~/Image/FM.png" style="width: 50px" />
+                    <div class="ms-3">
+                        <h4 class="mb-2">Family Planning</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                    <img src="~/Image/Wk.png" style="width: 50px" />
+                    <div class="ms-3">
+                        <h4 class="mb-2">Walk in</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<h2 class="text-center mt-2">Why <span class="text-primary">us</span></h2>
+<div id="carouselExampleIndicators" class="carousel slide mt-2" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Image/1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+           <img src="~/Image/2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+           <img src="~/Image/3.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        var hasRegistered = true;
+
+
+        if (hasRegistered) {
+            var modal = new bootstrap.Modal(document.getElementById("myModal"));
+            modal.show();
+
+
+            var closeButton = document.getElementById("close");
+            closeButton.addEventListener("click", function () {
+                modal.hide();
+            });
+        }
+    });
+</script>

@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewData["Title"] = "Patient";
+    Layout = "~/Views/Shared/_Conselling.cshtml";
+}
+<style>
+    #dash-con {
+        background: rgba( 0, 42, 255, 0.75 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 0px );
+        -webkit-backdrop-filter: blur( 0px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
+        #dash-con:hover {
+            background: rgba( 0, 42, 255, 1 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 20px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+</style>
+
+<h1>Welcome <span class="text-danger">E</span><span class="text-primary">-NOMPILE</span> <bold>Counselling</bold></h1>
+<h4 class="text-primary">Patient</h4>
+<div class="container-fluid pt-4 px-4">
+
+    <div class="row g-4">
+        <div class=" col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/App.png" style="width: 79px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Appointments<span class="badge bg-primary rounded-pill text-white">3</span></h4>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/File.png" style="width: 65px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Medical File</h4>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class=" dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/Alerts.png" style="width: 95px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Alerts <span class="badge bg-primary rounded-pill text-white">0</span></h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/Message.png" style="width: 65px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Messages <span class="badge bg-primary rounded-pill text-white">3</span></h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="AssessmentTable text-center rounded p-4" id="AssessmentTable">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">My Appointments</h6>
+            <a href="@Url.Action("Progress_Report","Reports")" class="button">Generate Report</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+
+                <thead class="table-primary">
+                    <tr>
+                        <th>Appointment Date</th>
+                        <th>Appointment Time</th>
+                        <th>Purpose of the Appointments</th>
+                        <th>Doctor / Nurse Information</th>
+                        <th>Status</th>
+                        
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                        <tr>
+                            <td>2023/08/31</td>
+                            <td>08:00</td>
+                            <td class="">Counselling</td>
+                            <td>Mr Mullar</td>
+                            <td>Pending</td>
+                            
+                        </tr>
+                    <tr>
+                        <td>2023/09/31</td>
+                        <td>09:00</td>
+                        <td class="">Counselling</td>
+                        <td>Mr Damiel</td>
+                        <td>Accepted</td>
+
+                    </tr>
+                    <tr>
+                        <td>2023/10/31</td>
+                        <td>09:00</td>
+                        <td class="">Counselling</td>
+                        <td>Mr Mullar</td>
+                        <td>pending</td>
+
+                    </tr>
+
+                    
+                    <tr>
+                    </tr>
+
+                </tbody>
+
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="AssessmentTable col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100  rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h6 class="mb-0">Messages</h6>
+                    <a href="">Show All</a>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-3">
+                    <img class="rounded-circle flex-shrink-0" width="40" height="40" src="https://img.icons8.com/color/48/user.png" alt="user" />
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Dr Mullar</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                        <span>Please not that am aware of the appointmetns</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-3">
+                    
+                    <img class="rounded-circle flex-shrink-0" width="40" height="40" src="https://img.icons8.com/color/48/user.png" alt="user" />
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Mr Maswa</h6>
+                            <small>40 minutes ago</small>
+                        </div>
+                        <span>Hey , i hope you are good. you have been...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-3">
+                    <img class="rounded-circle flex-shrink-0" width="40" height="40" src="https://img.icons8.com/color/48/user.png" alt="user" />
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Admin</h6>
+                            <small>3 days ago</small>
+                        </div>
+                        <span>Welcome to E-nompilo...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="AssessmentTable col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100  rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">To Do List</h6>
+                    <a href="">Show All</a>
+                </div>
+                <div class="d-flex mb-2">
+                    <input class="form-control bg-dark border-0" type="text" placeholder="Enter task">
+                    <button type="button" class="btn btn-primary ms-2">Add</button>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Short task goes here...</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Call Dr nullar</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox" checked>
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span><del>Wake up,make my bed</del></span>
+                            <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Take My Medication.....</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center pt-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Make Appointment....</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

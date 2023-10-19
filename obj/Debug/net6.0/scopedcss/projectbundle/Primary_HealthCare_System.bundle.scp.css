@@ -1,0 +1,49 @@
+/* _content/Primary_HealthCare_System/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand[b-i3fbs1qeij] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-i3fbs1qeij] {
+  color: #0077cc;
+}
+
+.btn-primary[b-i3fbs1qeij] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-i3fbs1qeij], .nav-pills .show > .nav-link[b-i3fbs1qeij] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-i3fbs1qeij] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-i3fbs1qeij] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-i3fbs1qeij] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-i3fbs1qeij] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-i3fbs1qeij] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}

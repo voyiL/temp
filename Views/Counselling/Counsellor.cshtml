@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewData["Title"] = "Counsellor";
+    Layout = "~/Views/Shared/_Conselling.cshtml";
+}
+
+<style>
+    #dash-con {
+        background: rgba( 0, 41, 255, 0.55 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 0px );
+        -webkit-backdrop-filter: blur( 0px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+
+        #dash-con:hover {
+            background: rgba( 0, 42, 255, 1 );
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            backdrop-filter: blur( 20px );
+            -webkit-backdrop-filter: blur( 20px );
+            border-radius: 10px;
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+        }
+</style>
+<h1>Welcome <span class="text-danger">E</span><span class="text-primary">-NOMPILE</span> <bold>Counselling</bold></h1>
+<h4 class="text-primary">Counsellor</h4>
+<div class="container-fluid pt-4 px-4">
+
+    <div class="row g-4">
+        <div class=" col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+             
+                
+                    <img src="~/Image/App.png" style="width: 79px" />
+              
+                <div class="ms-3">
+                    <h4 class="mb-2">Appointments<span class="badge bg-primary rounded-pill text-white"> 3</span></h4>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/File.png" style="width: 65px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Patient Records<span class="badge bg-primary rounded-pill text-white"> 0</span></h4>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class=" dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/Alerts.png" style="width: 95px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Referrals<span class="badge bg-primary rounded-pill text-white"> 0</span></h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <div id="dash-con" class="dash-con rounded d-flex align-items-center justify-content-between p-4">
+                <img src="~/Image/Message.png" style="width: 65px" />
+                <div class="ms-3">
+                    <h4 class="mb-2">Messages<span class="badge bg-primary rounded-pill text-white"> 0</span></h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="AssessmentTable text-center rounded p-4" id="AssessmentTable">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Upcoming Appointments</h6>
+            <a href="@Url.Action("Progress_Report","Reports")" class="button">Generate Report</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+
+                <thead class="table-primary">
+                    <tr>
+                        <th>Patient Information</th>
+                        <th>Appointment Date</th>
+                        <th>Appointment Time</th>
+                        <th>Purpose of the Appointments</th>
+                        <th>Status</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>Moshe  James</td>
+                        <td>2023/08/31</td>
+                        <td>08:00</td>
+                        <td class="">Counselling</td>
+                        <td>Pending</td>
+                        <td>
+                            <a class="btn btn-primary">Accept</a>|<a class="btn btn-warning">Postpone</a>|<a class="btn btn-danger">Delete</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Moshe  James</td>
+                        <td>2023/09/31</td>
+                        <td>09:00</td>
+                        <td class="">Counselling</td>
+                        <td>Accepted</td>
+                        <td>
+                            <a class="btn btn-warning">Postpone</a>|<a class="btn btn-danger">Delete</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>Moshe  James</td>
+                        <td>2023/10/31</td>
+                        <td>09:00</td>
+                        <td class="">Counselling</td>
+                        <td>pending</td>
+                        <td>
+                            <a class="btn btn-primary">Accept</a>|<a class="btn btn-warning">Postpone</a>|<a class="btn btn-danger">Delete</a>
+                        </td>
+
+                    </tr>
+
+                    
+                    <tr>
+                    </tr>
+
+                </tbody>
+
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
