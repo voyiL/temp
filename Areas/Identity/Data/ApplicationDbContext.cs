@@ -24,19 +24,19 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
        
     }
 
-    public DbSet<Primary_HealthCare_System.Models.Appointments>? Appointments { get; set; }
+    public DbSet<Appointments>? Appointments { get; set; }
 
-    public DbSet<Primary_HealthCare_System.Models.Medical_File>? Medical_File { get; set; }
+    public DbSet<Medical_File>? Medical_File { get; set; }
 
-    public DbSet<Primary_HealthCare_System.Models.Medical_Record>? Medical_Record { get; set; }
+    public DbSet<Medical_Record>? Medical_Record { get; set; }
 
-    public DbSet<Primary_HealthCare_System.Models.Feedback>? Feedback { get; set; }
+    public DbSet<Feedback>? Feedback { get; set; }
 
-    public DbSet<Primary_HealthCare_System.Models.Referal>? Referal { get; set; }
-    public DbSet<Primary_HealthCare_System.Models.Alert>? Alerts { get; set; }
-    public DbSet<Primary_HealthCare_System.Models.Counselling_Sessions>? Counselling_Sessions { get; set; }
+    public DbSet<Referal>? Referal { get; set; }
+    public DbSet<Alert>? Alerts { get; set; }
+    public DbSet<Counselling_Sessions>? Counselling_Sessions { get; set; }
 
-    //Chronic Med
+    ////Chronic Med
     public DbSet<PatientEducation>? PatientEducation { get; set; }
     public DbSet<Reminder>? Reminder { get; set; }
     public DbSet<RefillRequest>? RefillRequest { get; set; }
